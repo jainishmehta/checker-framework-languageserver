@@ -169,18 +169,5 @@ public class CFTextDocumentService implements TextDocumentService, Publisher {
         }
     }
 
-    /**
-     * The hover request is sent from the client to the server to request hover information at a
-     * given text document position.
-     *
-     * <p>Registration Options: TextDocumentRegistrationOptions
-     */
-    @Override
-    public CompletableFuture<Hover> hover(HoverParams params) {
-        logger.info(params.toString());
-
-        Hover result = new Hover(new MarkupContent(MarkupKind.PLAINTEXT, "Hello, Hover!"));
-        return CompletableFuture.completedFuture(result);
-    }
 }
 
